@@ -19,9 +19,13 @@ export default function App(){
 		});
 	}
 
+	function removeProduct(){
+		setCount(0);
+	}
+
 	return (
 		<>
-			<Header quantity={count}/>
+			<Header quantity={count} removeProduct={removeProduct}/>
 			<Vitrine quantity={count} adder={add}
 			substracter={substract} />
 		</>

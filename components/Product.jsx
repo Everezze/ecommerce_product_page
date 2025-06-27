@@ -12,7 +12,7 @@ export default function CartedProduct(props){
 						<span className="total-price"> ${(125.00 * props.quantity).toFixed(2)}</span>
 					</p>
 				</div>
-				<div className="img-container">
+				<div className="img-container curspoint" onClick={props.removeProduct}>
 					<img src="images/icon-delete.svg" alt="" />
 				</div>
 			</div>

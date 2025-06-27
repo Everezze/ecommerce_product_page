@@ -4,7 +4,8 @@ export default function(props){
 	function displayCartContent(){
 		if(props.quantity){
 			return (
-				<CartedProduct quantity={props.quantity} />
+				<CartedProduct quantity={props.quantity}
+				removeProduct={props.removeProduct}/>
 			)
 		}
 		return (

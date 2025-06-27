@@ -58,7 +58,7 @@ export default function Header(props){
 			<div className="right-nav">
 				<div className="img-container cart-img">
 					<img className="curspoint" src="images/icon-cart.svg" alt="" />
-					<Cart quantity={props.quantity}/>
+					<Cart quantity={props.quantity} removeProduct={props.removeProduct}/>
 				</div>
 				<div className="img-container profile-pic">
 					<img src="images/image-avatar.png" alt="" />
