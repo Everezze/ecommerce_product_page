@@ -1,8 +1,9 @@
-export default function Vitrine(){
+export default function Vitrine(props){
+	console.log(props);
 	return (
 		<article className="vitrine">
 			<div className="showcase">
-				<div className="img-container main-display">
+				<div className="img-container main-display curspoint">
 					<img src="images/image-product-1.jpg" alt="" />
 					<div className="prev-img-btn img-container curspoint">
 						<img src="images/icon-previous.svg" alt="" />
@@ -12,16 +13,16 @@ export default function Vitrine(){
 					</div>
 				</div>
 				<div className="gallery">
-					<div className="img-container curspoint">
+					<div className="img-container curspoint hover-opacity">
 						<img src="images/image-product-1-thumbnail.jpg" alt="" />
 					</div>
-					<div className="img-container curspoint">
+					<div className="img-container curspoint hover-opacity">
 						<img src="images/image-product-2-thumbnail.jpg" alt="" />
 					</div>
-					<div className="img-container curspoint">
+					<div className="img-container curspoint hover-opacity">
 						<img src="images/image-product-3-thumbnail.jpg" alt="" />
 					</div>
-					<div className="img-container curspoint">
+					<div className="img-container curspoint hover-opacity">
 						<img src="images/image-product-4-thumbnail.jpg" alt="" />
 					</div>
 				</div>
@@ -41,9 +42,9 @@ export default function Vitrine(){
 				</div>
 				<div className="selection">
 					<div className="quantifier">
-						<img className="curspoint" src="images/icon-minus.svg" alt="" />
-						<span className="quantity">0</span>
-						<img className="curspoint" src="images/icon-plus.svg" alt="" />
+						<img onClick={props.substracter} className="curspoint substracter hover-opacity" src="images/icon-minus.svg" alt="" />
+						<span className="quantity">{props.quantity}</span>
+						<img onClick={props.adder} className="curspoint adder hover-opacity" src="images/icon-plus.svg" alt="" />
 					</div>
 					<div className="carter">
 						<button className="curspoint">

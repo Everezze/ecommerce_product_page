@@ -1,4 +1,6 @@
-export default function Header(){
+import Cart from "./Cart";
+
+export default function Header(props){
 	return (
 		<header>
 			<div className="mobile-menu">
@@ -54,8 +56,9 @@ export default function Header(){
 				</nav>
 			</div>
 			<div className="right-nav">
-				<div className="img-container">
+				<div className="img-container cart-img">
 					<img className="curspoint" src="images/icon-cart.svg" alt="" />
+					<Cart quantity={props.quantity}/>
 				</div>
 				<div className="img-container profile-pic">
 					<img src="images/image-avatar.png" alt="" />
