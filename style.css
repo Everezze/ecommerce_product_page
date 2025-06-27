@@ -1,0 +1,299 @@
+:root{
+  --orange: hsl(26, 100%, 55%);
+  --pale-orange: hsl(25, 100%, 94%);
+  --very-dark-blue: hsl(220, 13%, 13%);
+  --dark-grayish-blue: hsl(219, 9%, 45%);
+  --grayish-blue: hsl(220, 14%, 75%);
+  --light-grayish-blue: hsl(223, 64%, 98%);
+  --white: hsl(0, 0%, 100%);
+  --black-200: hsla(0,0%,0%,20%);
+}
+
+*{
+	box-sizing: border-box;
+}
+
+body{
+	--fg: var(--dark-grayish-blue);
+	margin: 0;
+	font-family: "Kumbh Sans",sans-serif;
+	color:var(--fg);
+}
+
+main{
+	max-width: 1400px;
+}
+
+h1,h2,h3{
+	margin: 0;
+}
+
+header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
+}
+
+h1{
+	font-size: .65em;
+	letter-spacing: 2px;
+}
+
+h2{
+	/*font-size: 1.75em;*/
+	font-size: min(4vw,2.5em);
+	color: var(--very-dark-blue);
+}
+
+ul,ol{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+button{
+	border: none;
+	color: var(--fg);
+	background: var(--bg);
+	border-radius: .5rem;
+	padding: 1rem;
+}
+
+a{
+	text-decoration: none;
+	color:inherit;
+}
+
+nav{
+	display: none;
+}
+
+main{
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.img-container img{
+	width: 100%;
+}
+
+svg,img{
+	vertical-align: bottom;
+}
+
+path{
+	fill:var(--fg);
+}
+
+.left-nav li{
+	padding: 2rem 0;
+	cursor: pointer;
+}
+
+.left-nav li:hover,.left-nav li.active{
+	border-bottom: 2px solid black ;
+}
+
+.img-container{
+	width: var(--img-width);
+}
+
+.left-nav,.right-nav{
+	display: flex;
+	align-items: center;
+	gap: min(3vw,4rem);
+}
+
+.vert-sep > *+*{
+	margin-top: var(--margin-sep,1rem);
+}
+
+.hor-sep > *+*{
+	margin-left: var(--margin-sep,1rem);
+}
+
+.curspoint{
+	cursor:pointer;
+}
+
+.df{
+	display: flex;
+}
+
+.profile-pic{
+	--img-width:min(6vw,40px);
+}
+
+.mobile-menu{
+	--img-width:15px;
+	padding: 1rem 1.5rem;
+	display: none;
+}
+
+.menu-closer{
+	margin-bottom: 3rem;
+}
+
+/* VITRINE
+ */
+.vitrine{
+	align-items: center;
+}
+/* VITRINE
+ */
+
+/* PRODUCT INFO
+ */
+.product-info{
+	padding: 1.5rem;
+}
+
+.carter{
+	flex-grow: 2;
+}
+
+.carter button{
+	--fg: var(--very-dark-blue);
+	--bg: var(--orange);
+	width: 100%;
+	font-weight: bold;
+}
+
+.carter .img-container{
+	--img-width:18px;
+	display: inline-block;
+	margin-right: 1rem;
+}
+
+.pricing{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.discounted-price{
+	display: flex;
+	align-items: center;
+}
+
+.initial-pricing{
+	font-weight: bold;
+	text-decoration: line-through;
+}
+
+.discount{
+	padding: .25rem .75rem;
+	border-radius: .35rem;
+	background: var(--very-dark-blue);
+	color: var(--white);
+	font-weight: bold;
+	margin-left: 1rem;
+}
+
+.selection{
+	margin-top: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.quantifier {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
+	background: var(--light-grayish-blue);
+	border-radius: .5rem;
+	flex-grow: 1;
+}
+/* PRODUCT INFO
+ */
+
+/* SHOWCASE
+ */
+.gallery{
+	display: none;
+	justify-content: space-between;
+	gap:1rem
+}
+
+.gallery .img-container{
+	border-radius: .5rem;
+	overflow: hidden;
+}
+
+.prev-img-btn,.next-img-btn{
+	--img-width:32px;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	padding: .6rem;
+	background: var(--white);
+	border-radius: 50%;
+	height: var(--img-width);
+}
+
+.prev-img-btn img,.next-img-btn img{
+	width: auto;
+	height:100%;
+}
+
+.prev-img-btn{
+	left: 8%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.next-img-btn{
+	right: 8%;
+	top: 50%;
+	transform: translate(50%,-50%);
+}
+
+
+.main-display{
+	position: relative;
+}
+/* SHOWCASE
+ */
+
+@media screen and (min-width:800px) {
+	.ham-icon,.showcase .prev-img-btn,
+	.showcase .next-img-btn{
+		display: none;
+	}
+
+	nav{
+		display: initial;
+	}
+
+	.main-display{
+		border-radius: .5rem;
+		overflow: hidden;
+	}
+
+	.pricing{
+		flex-direction: column;
+	}
+
+	.selection{
+		flex-direction: row;
+	}
+
+	.main-display{
+		margin-bottom: 2rem;
+	}
+
+	.gallery{
+		display: flex;
+	}
+
+	.vitrine{
+		display: flex;
+		gap:3rem;
+		margin: 3rem 0;
+		padding: 0 min(5vw,6rem);
+	}
+}
+
