@@ -7,27 +7,32 @@ export default function App(){
 	const [count,setCount] = React.useState(0);
 
 	function add(){
-		setCount(prevCount => prevCount + 1);
+		const quantity = document.querySelector(".quantity");
+		quantity.textContent = parseInt(quantity.textContent) + 1;
 	}
 
 	function substract(){
-		setCount(prevCount => {
-			if(prevCount > 0){
-				return prevCount - 1;
-			};
-			return 0;
-		});
+		const quantity = document.querySelector(".quantity");
+		if(quantity.textContent - 1 >= 0){
+			quantity.textContent = parseInt(quantity.textContent) - 1;
+		}
 	}
 
 	function removeProduct(){
 		setCount(0);
 	}
 
+	function putToCart(){
+		const quantity = document.querySelector(".quantity");
+		setCount(parseInt(quantity.textContent));
+	}
+
 	return (
 		<>
 			<Header quantity={count} removeProduct={removeProduct}/>
 			<Vitrine quantity={count} adder={add}
-			substracter={substract} />
+			substracter={substract}
+			putToCart={putToCart}/>
 		</>
 	)
 }
