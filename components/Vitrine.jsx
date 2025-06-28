@@ -1,6 +1,5 @@
 import React from "react";
-import Gallery from "./Gallery";
-import MainDisplay from "./MainDisplay"
+import Showcase from "./Showcase";
 //re-use maindisplay for the zoomed in display
 
 export default function Vitrine(props){
@@ -26,7 +25,7 @@ export default function Vitrine(props){
 
 	function prevImage(){
 		setImgPosition(prevPosition => {
-			if(prevPosition - 1 > 1){
+			if(prevPosition - 1 >= 1){
 				return prevPosition - 1;
 			}
 			else{
@@ -38,11 +37,9 @@ export default function Vitrine(props){
 	console.log(props);
 	return (
 		<article className="vitrine">
-			<div className="showcase">
-				<MainDisplay classes={["main-display","curspoint"]} imgPosition={imgPosition}
-				prevImage={prevImage} nextImage={nextImage}/>
-				<Gallery currentImg={imgPosition} changeImage={changeImage} />
-			</div>
+			<Showcase prevImage={prevImage} nextImage={nextImage}
+			currentImg={imgPosition} changeImage={changeImage}
+			classes={["main-display","curspoint"]} parentClass="showcase"/>
 			<div className="product-info">
 				<h1>SNEAKER COMPANY</h1>
 				<h2>Fall Limited Edition Sneakers</h2>
@@ -71,6 +68,11 @@ export default function Vitrine(props){
 						</button>
 					</div>
 				</div>
+			</div>
+			<div className="zoomed-vitrine">
+				<Showcase prevImage={prevImage} nextImage={nextImage}
+				currentImg={imgPosition} changeImage={changeImage}
+				classes={["main-display"]} parentClass=""/>
 			</div>
 		</article>
 	)

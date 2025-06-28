@@ -237,6 +237,18 @@ path{
 
 /* SHOWCASE
  */
+.showcase{
+	--left-offset: 8%;
+	--right-offset: var(--left-offset);
+	--vertical-offset: 50%;
+}
+
+.zoomed-vitrine{
+	--left-offset: 0;
+	--right-offset: var(--left-offset);
+	--vertical-offset: 50%;
+}
+
 .gallery{
 	display: none;
 	justify-content: space-between;
@@ -253,7 +265,7 @@ path{
 }
 
 .gallery .img-container.active{
-	border: 2px solid var(--orange);
+	outline: 2px solid var(--orange);
 }
 
 .prev-img-btn,.next-img-btn{
@@ -265,6 +277,8 @@ path{
 	background: var(--white);
 	border-radius: 50%;
 	height: var(--img-width);
+	top: var(--vertical-offset);
+	z-index: 10;
 }
 
 .prev-img-btn img,.next-img-btn img{
@@ -273,14 +287,12 @@ path{
 }
 
 .prev-img-btn{
-	left: 8%;
-	top: 50%;
+	left: var(--left-offset);
 	transform: translate(-50%,-50%);
 }
 
 .next-img-btn{
-	right: 8%;
-	top: 50%;
+	right: var(--right-offset);
 	transform: translate(50%,-50%);
 }
 
@@ -320,7 +332,6 @@ path{
 .carted-product .thumbnail{
 	--img-width:40px;
 	border-radius: .25rem;
-	overflow: hidden;
 }
 
 .carted-product > *{
@@ -353,9 +364,9 @@ path{
 		display: initial;
 	}
 
-	.main-display{
+	.showcase .img-container img,
+	.zoomed-vitrine .img-container img{
 		border-radius: .5rem;
-		overflow: hidden;
 	}
 
 	.pricing{
