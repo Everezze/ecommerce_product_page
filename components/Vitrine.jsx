@@ -39,7 +39,8 @@ export default function Vitrine(props){
 		<article className="vitrine">
 			<Showcase prevImage={prevImage} nextImage={nextImage}
 			currentImg={imgPosition} changeImage={changeImage}
-			classes={["main-display","curspoint"]} parentClass="showcase"/>
+			classes={["main-display","curspoint"]} parentClass="showcase"
+			toggleZoom={props.toggleZoom}/>
 			<div className="product-info">
 				<h1>SNEAKER COMPANY</h1>
 				<h2>Fall Limited Edition Sneakers</h2>
@@ -69,11 +70,14 @@ export default function Vitrine(props){
 					</div>
 				</div>
 			</div>
-			<div className="zoomed-vitrine">
-				<Showcase prevImage={prevImage} nextImage={nextImage}
-				currentImg={imgPosition} changeImage={changeImage}
-				classes={["main-display"]} parentClass=""/>
-			</div>
+			{props.zoom && 
+				<div className="zoomed-vitrine">
+					<Showcase prevImage={prevImage} nextImage={nextImage}
+					currentImg={imgPosition} changeImage={changeImage}
+					classes={["main-display"]} parentClass="zoomed-showcase"
+					toggleZoom={props.toggleZoom}/>
+				</div>
+			}
 		</article>
 	)
 }

@@ -9,7 +9,7 @@ export default function(props){
 			)
 		}
 		return (
-			<p>Your cart is empty.</p>
+			<p className="empty-msg">Your cart is empty.</p>
 		)
 	}
 

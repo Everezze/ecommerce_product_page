@@ -7,7 +7,8 @@
   --grayish-blue: hsl(220, 14%, 75%);
   --light-grayish-blue: hsl(223, 64%, 98%);
   --white: hsl(0, 0%, 100%);
-  --black-200: hsla(0,0%,0%,20%);
+  --black-200: hsla(0,0%,0%,80%);
+  --black-100: hsla(0,0%,0%,20%);
 }
 
 *{
@@ -34,6 +35,7 @@ header{
 	justify-content: space-between;
 	align-items: center;
 	padding: 1rem;
+	position: relative;
 }
 
 h1{
@@ -43,7 +45,7 @@ h1{
 
 h2{
 	/*font-size: 1.75em;*/
-	font-size: min(4vw,2.5em);
+	font-size: min(7vw,2.5em);
 	color: var(--very-dark-blue);
 }
 
@@ -232,6 +234,11 @@ path{
 .adder,.substracter{
 	padding: .5rem;
 }
+
+.desc{
+	line-height: 1.5rem;
+	margin: 1rem 0;
+}
 /* PRODUCT INFO
  */
 
@@ -269,7 +276,7 @@ path{
 }
 
 .prev-img-btn,.next-img-btn{
-	--img-width:32px;
+	--img-width: calc(18px + 1.2rem);
 	position: absolute;
 	display: flex;
 	justify-content: center;
@@ -279,11 +286,6 @@ path{
 	height: var(--img-width);
 	top: var(--vertical-offset);
 	z-index: 10;
-}
-
-.prev-img-btn img,.next-img-btn img{
-	width: auto;
-	height:100%;
 }
 
 .prev-img-btn{
@@ -296,28 +298,35 @@ path{
 	transform: translate(50%,-50%);
 }
 
+.prev-img-btn:hover path,.next-img-btn:hover path{
+	stroke:var(--orange);
+}
 
 .main-display{
 	position: relative;
 }
+
+.main-display path{
+	fill:none;
+}
+
 /* SHOWCASE
  */
 
 
 /* CART
  */
-.cart-img{
-	position: relative;
-}
 
 .cart{
 	position: absolute;
+	z-index: 20;
 	background: var(--white);
-	width: max-content;
-	right: 0;
+	top: calc(100% + 1rem);
 	border-radius: .5rem;
-	top:3rem;
-	box-shadow: 0px 20px 30px -5px var(--black-200);
+	box-shadow: 0px 20px 30px -5px var(--black-100);
+	left:5px;
+	right:5px;
+	min-width: 330px;
 }
 
 .cart > *{
@@ -347,11 +356,48 @@ path{
 	margin: 1.5rem 0 .5rem;
 }
 
+.cart-bin{
+	margin-left: auto;
+}
+
 .total-price{
 	font-weight: bold;
 	color: var(--very-dark-blue);
 }
+
+.empty-msg{
+	margin: 3rem 0;
+	text-align: center;
+}
+
 /* CART
+ */
+
+
+/* ZOOMED VITRINE
+ */
+.zoomed-vitrine{
+	position: fixed;
+	inset: 0;
+	background: var(--black-200);
+	overflow: scroll;
+}
+
+.showcase-closer{
+	--fg:var(--white);
+	margin-bottom: 1rem;
+	text-align: right;
+}
+
+.showcase-closer:hover path{
+	fill:var(--orange);
+}
+
+.zoomed-showcase{
+	max-width: 400px;
+	margin: 4rem auto;
+}
+/* ZOOMED VITRINE
  */
 
 @media screen and (min-width:800px) {
@@ -394,6 +440,24 @@ path{
 
 	.quantifier{
 		padding: 0 1rem;
+	}
+
+	.cart-img{
+		position: relative;
+	}
+
+	.cart{
+		width: max-content;
+		left:auto;
+		right:0;
+	}
+
+	.desc{
+		margin: 2rem 0 1rem;
+	}
+
+	.cart-img{
+		position: relative;
 	}
 }
 
