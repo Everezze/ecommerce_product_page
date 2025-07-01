@@ -66,6 +66,7 @@ button{
 
 button:hover{
 	cursor: pointer;
+	background: var(--orange-300);
 }
 
 a{
@@ -177,10 +178,6 @@ path{
 .carter button{
 	--fg:var(--very-dark-blue);
 	width: 100%;
-}
-
-.carter button:hover{
-	background: var(--orange-300);
 }
 
 .carter .img-container{
