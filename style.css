@@ -34,8 +34,9 @@ header{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 1rem;
+	padding: 1rem 1rem 0;
 	position: relative;
+	border-bottom: 1px solid var(--light-grayish-blue);
 }
 
 h1{
