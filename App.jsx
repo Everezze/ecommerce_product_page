@@ -29,7 +29,9 @@ export default function App(){
 	}
 
 	function toggleZoom(){
-		setZoom(prevState => !prevState);
+		if(window.innerWidth > 800){
+			setZoom(prevState => !prevState);
+		}
 	}
 
 	return (

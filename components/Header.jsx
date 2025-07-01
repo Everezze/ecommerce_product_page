@@ -9,11 +9,16 @@ export default function Header(props){
 		setShowCart(prevState => !prevState);
 	}
 
+	function toggleMobileMenu(e){
+		const menu = document.querySelector(".mobile-menu");
+		menu.classList.toggle("active");
+	}
+
 	return (
 		<header>
 			<div className="mobile-menu">
-				<nav>
-					<div className="img-container menu-closer">
+				<nav className="mobile-nav">
+					<div className="img-container menu-closer curspoint" onClick={toggleMobileMenu}>
 						<img src="images/icon-close.svg" alt="" />
 					</div>
 					<ul className="vert-sep">
@@ -36,7 +41,7 @@ export default function Header(props){
 				</nav>
 			</div>
 			<div className="left-nav">
-				<div className="img-container ham-icon">
+				<div className="img-container ham-icon curspoint" onClick={toggleMobileMenu}>
 					<svg width="16" height="15" xmlns="http://www.w3.org/2000/svg"><path d="M16 12v3H0v-3h16Zm0-6v3H0V6h16Zm0-6v3H0V0h16Z" fill-rule="evenodd"/>
 					</svg>
 				</div>
@@ -65,6 +70,9 @@ export default function Header(props){
 			</div>
 			<div className="right-nav">
 				<div className="img-container cart-img" onClick={toggleCart}>
+					{props.quantity > 0 &&
+					<span className="quantity-indicator">{props.quantity}</span>
+					}
 					<img className="curspoint" src="images/icon-cart.svg" alt="" />
 					{showCart && 
 					<Cart quantity={props.quantity} removeProduct={props.removeProduct}/>

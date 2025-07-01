@@ -138,6 +138,29 @@ path{
 /* UTILS
  */
 
+
+/* HEADER
+ */
+.cart-img{
+	height:21px;
+}
+
+.cart-img > img{
+	width: auto;
+}
+
+.quantity-indicator{
+	font-size: .6em;
+	padding: .1rem .5rem;
+	background: var(--orange);
+	border-radius: 1rem;
+	color:var(--white);
+	position: relative;
+	font-weight: bold;
+	bottom: 50%;
+	left: 70%;
+}
+
 .profile-pic{
 	--img-width:min(6vw,40px);
 	border-radius: 50%;
@@ -147,15 +170,11 @@ path{
 	border: 2px solid var(--orange);
 }
 
-.mobile-menu{
-	--img-width:15px;
-	padding: 1rem 1.5rem;
-	display: none;
-}
-
 .menu-closer{
 	margin-bottom: 3rem;
 }
+/* HEADER
+ */
 
 /* VITRINE
  */
@@ -397,9 +416,38 @@ path{
 /* ZOOMED VITRINE
  */
 
+/* MOBILE MENU
+ */
+.mobile-menu{
+	--img-width:15px;
+	position: fixed;
+	inset:0;
+	background: var(--black-200);
+	display: none;
+	z-index: 100;
+}
+
+.mobile-menu.active,.mobile-nav{
+	display: block;
+}
+
+.mobile-nav{
+	background: var(--white);
+	height: 100%;
+	width: 70%;
+	padding: 1rem 1.5rem;
+}
+
+.mobile-nav ul{
+	color: var(--very-dark-blue);
+	font-weight: bold;
+}
+/* MOBILE MENU
+ */
+
 @media screen and (min-width:800px) {
 	.ham-icon,.showcase .prev-img-btn,
-	.showcase .next-img-btn{
+	.showcase .next-img-btn,.mobile-menu.active{
 		display: none;
 	}
 
@@ -435,6 +483,10 @@ path{
 		padding: 0 min(5vw,6rem);
 	}
 
+	.showcase > .main-display{
+		cursor: pointer;
+	}
+
 	.quantifier{
 		padding: 0 1rem;
 	}
@@ -453,8 +505,5 @@ path{
 		margin: 2rem 0 1rem;
 	}
 
-	.cart-img{
-		position: relative;
-	}
 }
 

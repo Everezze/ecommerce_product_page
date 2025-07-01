@@ -39,7 +39,7 @@ export default function Vitrine(props){
 		<article className="vitrine">
 			<Showcase prevImage={prevImage} nextImage={nextImage}
 			currentImg={imgPosition} changeImage={changeImage}
-			classes={["main-display","curspoint"]} parentClass="showcase"
+			classes={["main-display"]} parentClass="showcase"
 			toggleZoom={props.toggleZoom}/>
 			<div className="product-info">
 				<h1>SNEAKER COMPANY</h1>
